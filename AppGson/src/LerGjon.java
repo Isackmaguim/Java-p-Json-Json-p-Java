@@ -11,8 +11,12 @@ public class LerGjon {
 		try {
 			BufferedReader arquivoCerveja = new BufferedReader(new FileReader("cerveja.json"));
 			
-			Cerveja obj = gson.fromJson(arquivoCerveja, Cerveja.class);
-			System.out.println(obj);
+			//Cerveja obj = gson.fromJson(arquivoCerveja, Cerveja.class);
+			//System.out.println(obj);
+			while (arquivoCerveja.ready()) {
+				String arquivoCervejaLer = arquivoCerveja.readLine();
+				System.out.println(arquivoCervejaLer);
+			}
 			
 		} catch (IOException e) {
 		
